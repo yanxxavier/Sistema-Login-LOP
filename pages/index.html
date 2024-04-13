@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/template.css"/>
+    <title>Login</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <a class="logo" href="https://www.instagram.com/yanxxavier/" target="_blank">YnX</a>
+
+                <ul class="nav">
+                    <li><a href="">Home</a></li> 
+                    <li><a href="">Instructions</a></li>
+                    <li><a href="">Credits</a></li>
+                </ul>
+
+                <div class="sign">
+                    <button onclick="toggle('content')" class="btn">Sign/Login</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="content" class="box">
+            <div class="login-area">
+                <h3>LOGIN</h3>
+                <form>
+                    <div class="user-bar">
+                        <input id="usuario" type="text" placeholder="User" required/> <br/>
+                        <img src="../assets/images/user-img.png" alt="userLogo"/>
+                    </div>
+                    <div class="pass-bar">
+                        <input id="senha" type="password" placeholder="Password" required/>
+                        <img src="../assets/images/pass-img.png" alt="passLogo"/>
+                    </div>
+                    
+                </form>
+                <div class="other">
+                    <label>
+                        <input type="checkbox"/>
+                        Remember me
+                    </label>
+                    
+                    <a href="">Forgot password?</a>
+                </div>
+                <div class="login-btn">
+                    <button onclick="fazerLogin()">LOGIN</button>
+                </div>
+                <span class="first-sign">Don't have an account?  <button> Sign up</button></span>
+                
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+   
+   <script src="../assets/js/script.js"></script> 
+</body>
+</html>

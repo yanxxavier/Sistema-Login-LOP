@@ -1,0 +1,172 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    
+    box-sizing: border-box;
+    background-image: url(../images/VG3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+.navbar .logo {
+    color: #FFF;
+    font-size: 34px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    gap: 50px;    
+}
+.nav a {
+    text-decoration: none;
+    display: block;
+    color: #FFF;
+    font-size: 25px;
+    
+}
+
+.nav a:hover,
+.logo:hover,
+.sign .btn:hover,
+.login-btn button:hover,
+.sign button:hover {
+    transform: scale(1.10);
+    
+}
+
+.sign .btn {
+    border: 1px solid #FFF;
+    padding: 10px 40px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #FFF;
+    display: block;
+    font-size: 16px;
+    cursor: pointer;
+
+
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    
+}
+main .box {
+    width: 450px;
+    height: 450px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.login-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.login-area h3 {
+    color: #FFF;
+    font-size: 38px;
+}
+
+.user-bar,
+.pass-bar{
+    border-bottom: 2px solid #FFF;
+    width: 300px;
+    height: 50px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+.user-bar input,
+.pass-bar input {
+    background-color: transparent;
+    border: none;
+    width: 90%;
+    height: 100%;
+    outline: none;
+    color: #FFF;
+    
+    
+}
+.user-bar input::placeholder,
+.pass-bar input::placeholder {
+    color: #FFF; 
+    font-size: 18px;
+}
+.user-bar img,
+.pass-bar img {
+    width: 24px;
+    height: 24px;
+}
+
+.other {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.other label,
+.other a {
+    font-size: 13px;
+    color: #FFF;
+    text-decoration: none;
+    margin: 20px 0;
+}
+
+.login-btn button {
+    background-color: #FFF;
+    padding: 5px 60px;
+    height: 30px;
+    display: flex;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    
+}
+.first-sign {
+    color: #FFF;
+    font-size: 16px;
+    margin-top: 10px;
+    
+}
+.first-sign button {
+    background-color: transparent;
+    color: #000;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    
+}
