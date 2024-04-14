@@ -14,6 +14,7 @@ body {
     background-image: url(../images/VG3.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 .container {
     max-width: 1200px;
@@ -86,20 +87,39 @@ main .box {
     justify-content: center;
     align-items: center;
 }
+main .box2 {
+    width: 450px;
+    height: 450px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
-.login-area {
+.login-area,
+.inst-area {
     display: flex;
     flex-direction: column;
     align-items: center;
     
 }
-.login-area h3 {
+.login-area h3,
+.inst-area h3,
+.resume h3 {
     color: #FFF;
     font-size: 38px;
+    text-align: center;
+    
 }
+#login-result {
+    font-size: 13px;
+    color: red;
+    margin: 10px;
 
+}
 .user-bar,
 .pass-bar{
     border-bottom: 2px solid #FFF;
@@ -129,6 +149,7 @@ main .box {
 .pass-bar img {
     width: 24px;
     height: 24px;
+    cursor: pointer;
 }
 
 .other {
@@ -169,4 +190,25 @@ main .box {
     font-size: 15px;
     cursor: pointer;
     
+}
+
+.inst-info {
+    margin-top: 25px;
+}
+.inst-info p {
+    color: #FFF;
+    font-size: 22px;
+    
+}
+.resume {
+    margin: 20px 0;
+}
+.resume p {
+    font-size: 18px;
+    color: #FFF;
+    text-align: center;
+}
+.login-info p {
+    color: #FFF;
+
 }
