@@ -14,7 +14,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    overflow: hidden;
+    
     
 }
 .container {
@@ -23,6 +23,11 @@ body {
     margin: auto;
     padding-left: 20px;
     padding-right: 20px
+}
+.limiter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar {
@@ -262,7 +267,7 @@ main .box3 {
 }
 .first-sign button {
     background-color: transparent;
-    color: #000;
+    color: #FFF;
     border: none;
     font-size: 15px;
     cursor: pointer;

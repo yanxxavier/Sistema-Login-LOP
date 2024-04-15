@@ -16,7 +16,7 @@ function toggle(el) {
 
 function fazerLogin() {
     let user = "admin";
-    let pass = 123456;
+    let pass = "admin";
     let newUser = document.getElementById('usuario').value;
     let newPass = document.getElementById('senha').value;
 
@@ -49,7 +49,7 @@ function loginCheck () {
  /* Mostrar a senha */
  function showPass() {
     let inputPass = document.getElementById('senha');
-    let btnShowPass = document.getElementById('pass-btn');
+  
 
     if (inputPass.type === 'password') {
         inputPass.setAttribute('type', 'text')
