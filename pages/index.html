@@ -7,6 +7,7 @@
     <title>Login</title>
 </head>
 <body>
+    <!-- NavBar -->
     <header>
         <div class="container">
             <div class="navbar">
@@ -14,8 +15,8 @@
 
                 <ul class="nav">
                     
-                    <li><a href="">Instructions</a></li>
-                    <li><a href="">Credits</a></li>
+                    <li><button class="inst" onclick="toggle('content2')" id = "inst-btn">Instructions</button></li>
+                    <li><button class="cred" onclick="toggle('content3')" id = "cred-btn" href="">Credits</button></li>
                 </ul>
 
                 <div class="sign">
@@ -24,7 +25,7 @@
             </div>
         </div>
     </header>
-
+<!-- Área de Login -->
     <main>
         <div id="content" class="box">
             <div class="login-area">
@@ -57,9 +58,9 @@
             </div>
         </div>
     </main>
-
+<!-- Área de Instruções -->
     <main>
-        <div class="box2">
+        <div id="content2" class="box2">
             <div class="inst-area">
                 <h3>Instruções</h3>
                 <div class="inst-info">
@@ -81,6 +82,31 @@
                 </div>
                 
 
+            </div>
+        </div>
+    </main>
+<!-- Área de Créditos -->
+    <main>
+        <div id="content3" class="box3">
+            <h4>Créditos</h4>
+            <div class="cred-area">
+                
+                <div class="left-side">
+                    <div class="programador">
+                        <img src="../assets/images/WhatsApp Image 2024-02-26 at 15.18.07.jpeg"/>
+                        <a href="https://www.youtube.com/channel/UCDc1tYA3J9LtnGiJc5TKFTg" target="blank">Yan Xavier</a>   
+                        <h4>Programador</h4> 
+                    </div>
+                      
+                </div>
+                <div class="right-side"> 
+                    <div class="professor">
+                        <img src="../assets/images/channels4_profile.jpg"/>
+                        <a href="https://www.youtube.com/@aquilesburlamaqui/featured" target="blank">Aquiles Burlamaqui</a>
+                        <h4>Professor</h4>
+                    </div>         
+                    
+                </div>
             </div>
         </div>
     </main>
