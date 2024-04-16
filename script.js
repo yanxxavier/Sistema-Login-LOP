@@ -30,7 +30,7 @@ function fazerLogin() {
 
 
     if (newUser == user && newPass == pass) {
-        window.open('../pages/amizade.html')
+        window.open('amizade.html')
     }else {
         document.getElementById('login-result').textContent = "Login ou Senha inválido."
         
