@@ -10,11 +10,11 @@
 
 body {
     box-sizing: border-box;
-    background-image: url(/assets/images/VG3.jpg);
+    background-image: url(../images/VG3.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    background-color: black;
+    
     
     
 }
