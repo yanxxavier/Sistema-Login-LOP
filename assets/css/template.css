@@ -110,6 +110,7 @@ main .box2 {
     position: absolute;
     padding: 5px;
     top: 155px;
+    right: 560px;
 }
 main .box3 {
     width: 600px;
@@ -122,12 +123,25 @@ main .box3 {
     align-items: center;
     position: absolute;
     top: 155px;
+    right: 500px;
     padding-bottom: 30px;
 }
-.box3 h4 {
+.box3 h4,
+.box4 h3 {
     font-size: 32px;
     color: #FFF;
     margin-bottom: 40px;
+}
+main .box4 {
+    width: 450px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
 }
 
 .cred-area {
@@ -164,8 +178,14 @@ main .box3 {
 }
 .programador a:hover,
 .professor a:hover {
+    display: block;
     color: #ff0000;
     transform: scale(1.10);
+}
+.first-sign button:hover,
+.other a:hover {
+    font-weight: bold;
+    color: #000;
 }
 .programador h4,
 .professor h4 {
@@ -204,7 +224,11 @@ main .box3 {
 
 }
 .user-bar,
-.pass-bar{
+.pass-bar,
+.create-user,
+.create-pass,
+.name-bar,
+.confirm {
     border-bottom: 2px solid #FFF;
     width: 300px;
     height: 50px;
@@ -213,7 +237,11 @@ main .box3 {
     align-items: center;
 }
 .user-bar input,
-.pass-bar input {
+.pass-bar input,
+.create-user input,
+.create-pass input,
+.name-bar input,
+.confirm input {
     background-color: transparent;
     border: none;
     width: 90%;
@@ -223,13 +251,22 @@ main .box3 {
     
     
 }
+#register-result {
+    margin: 20px 0;
+    color: #ff0000;
+}
 .user-bar input::placeholder,
-.pass-bar input::placeholder {
+.pass-bar input::placeholder,
+.create-user input::placeholder,
+.create-pass input::placeholder,
+.name-bar input::placeholder,
+.confirm input::placeholder {
     color: #FFF; 
     font-size: 18px;
 }
 .user-bar img,
-.pass-bar img {
+.pass-bar img,
+.create-pass img {
     width: 24px;
     height: 24px;
     cursor: pointer;
@@ -247,8 +284,14 @@ main .box3 {
     text-decoration: none;
     margin: 20px 0;
 }
+.login-btn,
+.register-btn {
+    display: flex;
+    justify-content: center;
+}
 
-.login-btn button {
+.login-btn button,
+.register-btn button {
     background-color: #FFF;
     padding: 5px 60px;
     height: 30px;
@@ -258,6 +301,8 @@ main .box3 {
     font-weight: bold;
     border: none;
     cursor: pointer;
+    margin-top: 20px;
+    
     
 }
 .first-sign {

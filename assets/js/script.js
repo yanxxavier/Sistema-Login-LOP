@@ -8,62 +8,91 @@ https://www.youtube.com/watch?v=O9VzMwJ--XY
 
 
 /*Troca de Tela*/
+let elementoAtual = null;
 function toggle(el) {
-    let display = document.getElementById(el).style.display;
-    if (display == 'none') {
-        document.getElementById(el).style.display = 'flex';
+    if (elementoAtual && elementoAtual !== el) {
+        document.getElementById(elementoAtual).style.display = "none";
+    }
+
+    let elemento = document.getElementById(el);
+
+    if (el === elementoAtual) {
+        elemento.style.display = "none";
+        elementoAtual = null;
+
     }else {
-        document.getElementById(el).style.display = 'none'
+        elemento.style.display = "flex";
+        elementoAtual = el;
     }
 }
+/*Sistema Registro*/
 
+function fazerRegistro() {
+    let name = document.getElementById('client-name').value;
+    let newUser = document.getElementById('crt-user').value;
+    let newPass = document.getElementById('crt-pass').value;
+    let confirmPass = document.getElementById('pass-confirm').value;
 
+    if (newPass !== confirmPass) {
+        document.getElementById('register-result').textContent = "As senhas não conferem!";
+    }else {
+        localStorage.setItem('newUserName', name);
+        localStorage.setItem('novoUsuario', newUser);
+        localStorage.setItem('novaSenha', newPass);
+
+        document.getElementById('register-result').textContent = "Registrado com sucesso"
+    }
+
+    
+}
+
+/*Submit Registro*/
+document.querySelector('#register-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    fazerRegistro();
+})
 
 
 /*Sistema Login*/
 
 function fazerLogin() {
-    let user = "admin";
-    let pass = "admin";
     let newUser = document.getElementById('usuario').value;
     let newPass = document.getElementById('senha').value;
 
+    let storedUser = localStorage.getItem('novoUsuario');
+    let storedPass = localStorage.getItem('novaSenha');
 
-    if (newUser == user && newPass == pass) {
-        window.open('../pages/amizade.html')
+
+    if (newUser === storedUser && newPass === storedPass) {
+        window.open('amizde.html')
     }else {
         document.getElementById('login-result').textContent = "Login ou Senha inválido."
         
 
     }
     
+    
    
 }
-/* Check de texto */
-function loginCheck () {
-    let checkUser = document.getElementById('usuario').value;
-    let checkPass = document.getElementById('senha').value;
+/*Submit Login*/
+document.querySelector('#login-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    fazerLogin();
+})
 
-    if (checkUser == "" || checkPass == "") {
-        document.getElementById('login-result').textContent = "Preencha os campos acima.";
-    }else {
-        return fazerLogin();
-    }
-        
-        
-}
 
 
  /* Mostrar a senha */
  function showPass() {
-    let inputPass = document.getElementById('senha');
-  
+    let inputPasses = document.querySelectorAll('#senha, #crt-pass');
 
-    if (inputPass.type === 'password') {
-        inputPass.setAttribute('type', 'text')
-    } else {
-        inputPass.setAttribute('type', 'password')
-    }
+    inputPasses.forEach((inputPass) => {
+        if (inputPass.type === 'password') {
+            inputPass.setAttribute('type', 'text');
+        } else {
+            inputPass.setAttribute('type', 'password');
+        }
+    });
 }
 
 
