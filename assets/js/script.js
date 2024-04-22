@@ -64,7 +64,7 @@ function fazerLogin() {
 
 
     if (newUser === storedUser && newPass === storedPass) {
-        window.open('amizde.html')
+        window.open('amizade.html')
     }else {
         document.getElementById('login-result').textContent = "Login ou Senha inválido."
         

@@ -8,7 +8,7 @@
     
 }
 
-body {
+.bg-surf {
     box-sizing: border-box;
     background-image: url(../images/VG3.jpg);
     background-repeat: no-repeat;
@@ -17,6 +17,16 @@ body {
     
     
     
+    
+}
+.back {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.back img {
+    width: 100%;
+    height: 100%;
 }
 .container {
     max-width: 1200px;
@@ -107,10 +117,8 @@ main .box2 {
     display: none;
     justify-content: center;
     align-items: center;
-    position: absolute;
     padding: 5px;
-    top: 155px;
-    right: 560px;
+    
 }
 main .box3 {
     width: 600px;
@@ -121,10 +129,8 @@ main .box3 {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    top: 155px;
-    right: 500px;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
+    
 }
 .box3 h4,
 .box4 h3 {
@@ -337,7 +343,7 @@ main .box4 {
     color: #FFF;
     text-align: center;
 }
-.login-info p {
-    color: #FFF;
 
-}
+
+
+
