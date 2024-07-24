@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/template.css"/>
     <title>Login</title>
 </head>
@@ -15,12 +16,12 @@
 
                 <ul class="nav">
                     
-                    <li><button class="inst" onclick="toggle('content2')" id = "inst-btn">Instruções</button></li>
-                    <li><button class="cred" onclick="toggle('content3')" id = "cred-btn" href="">Créditos</button></li>
+                    <li><button class="inst" id = "inst-btn">Instruções</button></li>
+                    <li><button class="cred" id = "cred-btn" href="">Créditos</button></li>
                 </ul>
 
                 <div class="sign">
-                    <button onclick="toggle('content')" class="btn">Sign/Login</button>
+                    <button class="btn" id="sign-nav">Sign/Login</button>
                 </div>
             </div>
         </div>
@@ -30,18 +31,18 @@
     <div class="limiter">
 
 
-        <section>
+        <section class="login-section">
             <div id="content" class="box">
                 <div class="login-area">
                     <h3>LOGIN</h3>
                     <form id="login-form">
                         <div class="user-bar">
                             <input id="usuario" type="text" placeholder="Usuário" required/> <br/>
-                            <img src="assets/images/user-img.png" alt="userLogo"/>
+                            <img src="assets/images/user-img.png" alt="userLogo" class="userImg"/>
                         </div>
                         <div class="pass-bar">
                             <input id="senha" type="password" placeholder="Senha" required/>
-                            <img  src="assets/images/pass-img.png" alt="passLogo" onclick="showPass()"/>
+                            <i class="fa-solid fa-eye" id="senha-log"></i>
                         </div>
                         <div class="login-btn">
                             <button type="submit">LOGIN</button>
@@ -57,13 +58,13 @@
                     </div>
                     
                     <div id="login-result"></div>
-                    <span class="first-sign">Não possui uma conta?  <button onclick="toggle('content4')"> Sign up</button></span>
+                    <span class="first-sign">Não possui uma conta?  <button id="sign-screen"> Sign up</button></span>
                     
                 </div>
             </div>
         </section>
     <!-- Área de Instruções -->
-        <section>
+        <section class="instrucoes-section">
             <div id="content2" class="box2">
                 <div class="inst-area">
                     <h3>Instruções</h3>
@@ -87,7 +88,7 @@
             </div>
         </section>
     <!-- Área de Créditos -->
-        <section>
+        <section class="creditos-section">
             <div id="content3" class="box3">
                 <h4>Créditos</h4>
                 <div class="cred-area">
@@ -112,32 +113,44 @@
             </div>
         </section>
         <!-- Área de Registro -->
-        <section>
+        <section class="registro-section">
             <div id="content4" class="box4">
                 <h3>REGISTRO</h3>
                     <form id="register-form">
-                        <div class="name-bar">
-                            <input id="client-name" type="text" placeholder="Nome" required/> <br/>
+                        <div class="name-age">
+                            <div class="name-bar">
+                                <input id="client-name" type="text" placeholder="Nome" required/> 
+                            </div>
+                            <div class="age-bar">
+                                <input id="client-age" type="number" placeholder="Idade" required/>
+                            </div>
+                        </div>
+                        <div class="gen-bar">
+                            <label for="masculino">
+                                <input type="radio" name="masculino" id="mascRadio" value="masc">
+                                Masculino
+                            </label>
+                            <label for="feminino">
+                                <input type="radio" name="feminino" id="femRadio" value="fem">
+                                Feminino
+                            </label>
                         </div>
                         <div class="create-user">
-                            <input id="crt-user" type="text" placeholder="Usuário" required/> <br/>
-                            <img src="assets/images/user-img.png" alt="userLogo"/>
+                            <input id="crt-user" type="text" placeholder="Usuário" required/> 
+                            <img src="assets/images/user-img.png" alt="userLogo" class="userImg"/>
                         </div>
                         <div class="create-pass">
                             <input id="crt-pass" type="password" placeholder="Senha" required/>
-                            <img id="senha-reg" src="assets/images/pass-img.png" alt="passLogo" onclick="showPass()"/>
+                            <i class="fa-solid fa-eye" id="senha-reg"></i>
                         </div>
-                        <div class="confirm">
-                            <input id="pass-confirm" type="password" placeholder="Confirme a senha" required/>
-                            
-                        </div>
+                        
                         <div class="register-btn">
                             <button type="submit" >REGISTER</button>
                         </div>
                     </form>
                     
                     <div id="register-result"></div>
-                    <span class="first-sign">Já possui uma conta?  <button onclick="toggle('content')"> Login</button></span>
+                    <span class="first-sign">Já possui uma conta?  <button id="login-btn"> Login</button></span>
             </div>
 
         </section>
@@ -150,6 +163,6 @@
 
 
    
-   <script src="assets/js/script.js"></script> 
+   <script type="module" src="assets/js/script.js"></script> 
 </body>
 </html>

@@ -1,0 +1,178 @@
+main .box {
+    width: 450px;
+    height: 450px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.first-sign button:hover,
+.other a:hover {
+    font-weight: bold;
+    color: #000;
+}
+.login-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.login-area h3 {
+    color: #FFF;
+    font-size: 38px;
+    text-align: center;
+    
+}
+#login-result {
+    font-size: 13px;
+    color: red;
+    margin: 10px;
+
+}
+.name-age {
+    display: flex;
+    width: 100%;
+    column-gap: 10px;
+    
+}
+.name-bar,
+.age-bar {
+    flex: 1;
+    border-bottom: 2px solid #FFF;
+    width: 120px;
+    height: 50px;
+}
+.gen-bar {
+    display: flex;
+    justify-content: space-between;
+}
+#register-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: .7rem;
+
+}
+.fa-solid {
+    color: #FFF;
+    cursor: pointer;
+}
+.userImg {
+    width: 20px;
+    height: 18px;
+}
+.user-bar,
+.pass-bar,
+.create-user,
+.create-pass,
+.confirm{
+    border-bottom: 2px solid #FFF;
+    width: 300px;
+    height: 50px;
+  
+    display: flex;
+    align-items: center;
+}
+.user-bar input,
+.pass-bar input,
+.create-user input,
+.create-pass input,
+.name-bar input,
+.age-bar input,
+.confirm input {
+    background-color: transparent;
+    border: none;
+    width: 90%;
+    height: 100%;
+    outline: none;
+    color: #FFF;
+    
+    
+}
+.user-bar input::placeholder,
+.pass-bar input::placeholder,
+.create-user input::placeholder,
+.create-pass input::placeholder,
+.name-bar input::placeholder,
+.confirm input::placeholder,
+.age-bar input::placeholder,
+.gen-bar label {
+    color: #FFF; 
+    font-size: 18px;
+}
+.user-bar img,
+.pass-bar img,
+.create-pass img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.other {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.other label,
+.other a {
+    font-size: 13px;
+    color: #FFF;
+    text-decoration: none;
+    margin: 20px 0;
+}
+.login-btn,
+.register-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.login-btn button,
+.register-btn button {
+    background-color: #FFF;
+    padding: .3rem 2.5rem;
+    
+    display: flex;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    
+    
+}
+.first-sign {
+    color: #FFF;
+    font-size: 16px;
+    margin-top: 10px;
+    
+}
+.first-sign button {
+    background-color: transparent;
+    color: #FFF;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    
+}
+
+main .box4 {
+    width: 450px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+.box4 h3 {
+    font-size: 32px;
+    color: #FFF;
+    margin-bottom: 40px;
+}
+#register-result {
+    margin: 20px 0;
+    color: #ff0000;
+}

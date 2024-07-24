@@ -1,0 +1,114 @@
+main .box2 {
+    width: 450px;
+    height: 450px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    
+}
+main .box3 {
+    width: 600px;
+    height: 450px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+    
+}
+.box3 h4 {
+    font-size: 32px;
+    color: #FFF;
+    margin-bottom: 40px;
+}
+
+.cred-area {
+    display: flex;
+    gap: 20px;
+}
+.cred-area .left-side,
+.cred-area .right-side {
+    
+    flex: 1;
+}
+.programador,
+.professor {
+    width: 230px;
+    height: 205px;
+    
+
+}
+.programador img,
+.professor img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    
+}
+.programador a,
+.professor a {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFF;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+}
+.programador a:hover,
+.professor a:hover {
+    display: block;
+    color: #ff0000;
+    transform: scale(1.10);
+}
+
+.programador h4,
+.professor h4 {
+    font-size: 20px;
+    color: #FFF;
+    text-align: center;
+    
+}
+
+
+
+.inst-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.inst-area h3 {
+    color: #FFF;
+    font-size: 38px;
+    text-align: center;
+    
+}
+.resume h3 {
+    color: #FFF;
+    font-size: 29px;
+    text-align: center;
+    
+}
+
+.inst-info {
+    margin-top: 25px;
+}
+.inst-info p {
+    color: #FFF;
+    font-size: 22px;
+    text-align: center;
+    
+}
+.resume {
+    margin: 20px 0;
+}
+.resume p {
+    font-size: 18px;
+    color: #FFF;
+    text-align: center;
+}

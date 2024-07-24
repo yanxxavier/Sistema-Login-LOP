@@ -1,0 +1,51 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+.navbar .logo {
+    color: #FFF;
+    font-size: 34px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    gap: 50px;    
+}
+.nav .inst,
+.nav .cred {
+    text-decoration: none;
+    cursor: pointer;
+    color: #FFF;
+    font-size: 25px;
+    background-color: transparent;
+    border: none;
+    
+}
+
+.nav .inst:hover,
+.nav .cred:hover,
+.logo:hover,
+.sign .btn:hover,
+.login-btn button:hover,
+.sign button:hover {
+    transform: scale(1.10);
+    
+}
+
+.sign .btn {
+    border: 1px solid #FFF;
+    padding: 10px 40px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #FFF;
+    display: block;
+    font-size: 16px;
+    cursor: pointer;
+
+
+}
