@@ -1,0 +1,67 @@
+.box5 {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 50vw;
+
+}
+.box5 h4 {
+    font-size: 32px;
+    color: #FFF;
+    margin-bottom: 1rem;
+}
+.search-bar {
+    border-bottom: 2px solid #FFF;
+    align-self: flex-end;  
+    margin-bottom: 2rem ; 
+}
+.buscar {
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+.buscar::placeholder {
+    color: #FFF; 
+    font-size: 18px;
+}
+.comp-area {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+}
+
+.competicao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: .7rem;
+    background-color: #FFF;
+    padding: 1rem;
+    border-radius: 5px;
+
+}
+.competicao h5 {
+    font-size: 1rem;
+}
+.competicao p,
+.competicao span {
+    font-size: .9rem;
+}
+
+#inscreverBtn {
+    background: #77dd77;
+    border: none;
+    padding: .4rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    
+
+}
+.fa-location-dot {
+    color: #000;
+}

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="assets/css/template.css"/>
     <title>Login</title>
 </head>
@@ -18,8 +19,14 @@
                     
                     <li><button class="inst" id = "inst-btn">Instruções</button></li>
                     <li><button class="cred" id = "cred-btn" href="">Créditos</button></li>
-                </ul>
+                    <li><button class="comp" id = "comp-btn" href="" disabled>Competições</button></li>
 
+                </ul>
+                
+                <div class="perfil">
+                    <i class="fa-solid fa-face-grin-beam"></i>
+                    <p>Olá, <span id="user-name">surfista</span></p>
+                </div>
                 <div class="sign">
                     <button class="btn" id="sign-nav">Sign/Login</button>
                 </div>
@@ -127,11 +134,11 @@
                         </div>
                         <div class="gen-bar">
                             <label for="masculino">
-                                <input type="radio" name="masculino" id="mascRadio" value="masc">
+                                <input type="radio" name="generos" id="mascRadio" value="masc" required>
                                 Masculino
                             </label>
                             <label for="feminino">
-                                <input type="radio" name="feminino" id="femRadio" value="fem">
+                                <input type="radio" name="generos" id="femRadio" value="fem" required>
                                 Feminino
                             </label>
                         </div>
@@ -154,6 +161,60 @@
             </div>
 
         </section>
+
+        <section class="comp-section">
+            <div class="box5" id="content5">
+                <h4>Competições</h4>
+
+                <div class="search-bar">
+                    <input type="text" name="Buscar" id="search-filter" placeholder="Buscar" class="buscar">
+                </div>
+
+                <div class="comp-area">
+                    <div class="competicao">
+                        <h5>Rip Curl GromSearch</h5>
+                        <p>Categoria: Sub-12 a Sub-18 / M&F</p>
+                        <i class="fa-solid fa-location-dot" id="openModalBeach"></i>
+                        <span>21/02/2025</span>
+                        <button id="inscreverBtn">Se inscrever</button>
+                    </div>
+
+                    <div class="competicao">
+                        <h5>Pan American Surfing Games</h5>
+                        <p>Categoria: Open / M&F</p>
+                        <i class="fa-solid fa-location-dot" id="openModalBeach"></i>
+                        <span>04/10/2024</span>
+                        <button id="inscreverBtn">Se inscrever</button>
+                    </div>
+
+                    <div class="competicao">
+                        <h5>Australian Surfing</h5>
+                        <p>Categoria: Sub-14 a Legends / M&F</p>
+                        <i class="fa-solid fa-location-dot" id="openModalBeach"></i>
+                        <span>13/05/2025</span>
+                        <button id="inscreverBtn">Se inscrever</button>
+                    </div>
+
+                    <div class="competicao">
+                        <h5>ISA World Junior Surfing</h5>
+                        <p>Categoria: Sub-16 e Sub-18 / M&F</p>
+                        <i class="fa-solid fa-location-dot" id="openModalBeach"></i>
+                        <span>29/08/2024</span>
+                        <button id="inscreverBtn">Se inscrever</button>
+                    </div>
+
+                    <div class="competicao">
+                        <h5>Billabong Junior Series</h5>
+                        <p>Categoria: Sub-12 a Sub-18 / M&F</p>
+                        <i class="fa-solid fa-location-dot" id="openModalBeach"></i>
+                        <span>12/11/2024</span>
+                        <button id="inscreverBtn">Se inscrever</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
     </div>
 
 
@@ -164,5 +225,6 @@
 
    
    <script type="module" src="assets/js/script.js"></script> 
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>

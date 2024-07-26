@@ -4,6 +4,7 @@
 @import url(navbar.css);
 @import url(login&register.css);
 @import url(instru&cred.css);
+@import url(comp.css);
 
 * {
     font-family: "Poppins", sans-serif;
@@ -47,8 +48,7 @@ main {
     justify-content: center;
     align-items: center;
     height: 90vh;
-    
-    
+
 }
 
 

@@ -3,6 +3,9 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1rem;
+    border-radius: 10px;
 }
 .navbar .logo {
     color: #FFF;
@@ -15,9 +18,13 @@
     list-style: none;
     display: flex;
     gap: 50px;    
+    flex-grow: 1;
+    justify-content: center;
+    column-gap: 2rem;
 }
 .nav .inst,
-.nav .cred {
+.nav .cred,
+.nav .comp {
     text-decoration: none;
     cursor: pointer;
     color: #FFF;
@@ -27,8 +34,10 @@
     
 }
 
+
 .nav .inst:hover,
 .nav .cred:hover,
+.nav .comp:hover,
 .logo:hover,
 .sign .btn:hover,
 .login-btn button:hover,
@@ -39,13 +48,25 @@
 
 .sign .btn {
     border: 1px solid #FFF;
-    padding: 10px 40px;
+    padding: 1rem 2rem;
     border-radius: 5px;
     background-color: transparent;
     color: #FFF;
     display: block;
+    font-weight: bold;
     font-size: 16px;
     cursor: pointer;
 
 
+}
+.perfil {
+    display: none;
+    column-gap: .5rem;
+    align-items: center;
+    background-color: #FFF;
+    padding: 1rem;
+    border-radius: 10px;
+}
+.perfil .fa-face-grin-beam {
+    color: #000;
 }
