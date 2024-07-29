@@ -17,7 +17,7 @@ export default function initComp() {
             user.category = "Sub-12";
         } else if (user.age <= 14) {
             user.category = "Sub-14";
-        } else if (user.age <= 16) {
+        } else if (user.age <= 16) {Conheça
             user.category = "Sub-16";
         } else if (user.age <= 18) {
             user.category = "Sub-18";
@@ -35,6 +35,19 @@ export default function initComp() {
             user.category = "Legends"; 
         }
         
+    }
+
+    let competitions = {
+        compRip : ["Sub-12", "Sub-14", "Sub-16", "Sub-18"],
+        compPan : ["Open"],
+        compAus : ["Sub-14", "Sub-16", "Sub-18", "Open", "Masters", "Grand Masters", "Kahunas", "Grand Kahunas", "Legends"],
+        compIsa : ["Sub-16", "Sub-18"],
+        compBill : ["Sub-12", "Sub-14", "Sub-16", "Sub-18"],
+
+    }
+
+    function checkInsc (user, competition) {
+        let result = {};
     }
   
         
