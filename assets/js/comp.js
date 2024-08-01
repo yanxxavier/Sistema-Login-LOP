@@ -5,7 +5,8 @@ export default function initComp() {
     
         verifyCategory(userObjComp);
         console.log(userObjComp)
-
+        let insc = checkInsc(userObjComp,competitions);
+        console.log(insc);
 
 
         
@@ -48,6 +49,19 @@ export default function initComp() {
 
     function checkInsc (user, competition) {
         let result = {};
+        for(let comp in competition) {
+            if(competition[comp].includes(user.category)) {
+                result[comp] = true;
+            }else {
+                result[comp] = false;
+            }
+        }
+
+        return result;
+    }
+
+    function competitionBtnCheck() {
+        
     }
   
         
