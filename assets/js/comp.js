@@ -4,10 +4,9 @@ export default function initComp() {
         const userObjComp = JSON.parse(compUserData);
     
         verifyCategory(userObjComp);
-        console.log(userObjComp)
         let insc = checkInsc(userObjComp,competitions);
-        console.log(insc);
-
+        let compArray = competitionBtnCheck(insc);
+        console.log(compArray)
 
         
         
@@ -18,7 +17,7 @@ export default function initComp() {
             user.category = "Sub-12";
         } else if (user.age <= 14) {
             user.category = "Sub-14";
-        } else if (user.age <= 16) {Conheça
+        } else if (user.age <= 16) {
             user.category = "Sub-16";
         } else if (user.age <= 18) {
             user.category = "Sub-18";
@@ -59,10 +58,59 @@ export default function initComp() {
 
         return result;
     }
+    function competitionBtnCheck(insc) {
+        let inscCompetitions = [];
+        
+        for(let compCheck in insc) {
+            let btnOk = document.querySelector(`[data-btn = "${compCheck}"]`);
+            if(insc.hasOwnProperty(compCheck) && insc[compCheck] === true) {
+                btnOk.style.background = "#77dd77";
+                console.log(`${compCheck} pode se inscrever`)
+            }else {
+                btnOk.style.background = "#FF6961";
+                btnOk.setAttribute("id", "dis");
 
-    function competitionBtnCheck() {
-        
+            }
+        }
+        const inscBtns = document.querySelectorAll("[data-btn]");
+        inscBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                if(btn.getAttribute("id") === "dis") {
+                    Toastify({ //Lib de alert 
+                        text: `Impossivel fazer inscricao!`,
+                        duration: 3000,
+                        close: true,
+                        gravity: "bottom", 
+                        position: "right",
+                        stopOnFocus: true, 
+                        style: {
+                          background: "red",
+                        },
+                        
+                    }).showToast();
+                }else {
+                    Toastify({ //Lib de alert 
+                        text: `Inscrito com sucesso!`,
+                        duration: 3000,
+                        close: true,
+                        gravity: "bottom", 
+                        position: "right",
+                        stopOnFocus: true, 
+                        style: {
+                          background: "green",
+                          color: "white",
+                        },
+                    }).showToast();
+                    inscCompetitions.push(btn.getAttribute("data-btn"));
+                    return inscCompetitions;
+                    
+                    
+                    
+                }
+
+            });
+        }) 
+        return inscCompetitions
     }
-  
         
-}test
+}

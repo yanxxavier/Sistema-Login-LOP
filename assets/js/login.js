@@ -69,7 +69,7 @@ export default function initLogin() {
                 },
                 
             }).showToast();
-            return
+            return false
         }else {
             Toastify({ //Lib de alert 
                 text: `Seja bem vindo, ${userObj.name}!`,
@@ -97,7 +97,12 @@ export default function initLogin() {
     document.querySelector('#login-form').addEventListener('submit', (event) => {
         event.preventDefault();
         fazerLogin()
-        document.dispatchEvent(logEvent);
+        if(fazerLogin() === false) {
+            return
+        }else {
+            document.dispatchEvent(logEvent);
+
+        }
     
         
         
