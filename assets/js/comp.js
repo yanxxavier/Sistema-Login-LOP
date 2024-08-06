@@ -1,8 +1,8 @@
 export default function initComp() {
+    const compUserData = localStorage.getItem("userData");
+    const userObjComp = JSON.parse(compUserData);
+
     document.addEventListener("logSucess", () => {
-        const compUserData = localStorage.getItem("userData");
-        const userObjComp = JSON.parse(compUserData);
-    
         verifyCategory(userObjComp);
         let insc = checkInsc(userObjComp,competitions);
         let compArray = competitionBtnCheck(insc);
@@ -65,7 +65,7 @@ export default function initComp() {
             let btnOk = document.querySelector(`[data-btn = "${compCheck}"]`);
             if(insc.hasOwnProperty(compCheck) && insc[compCheck] === true) {
                 btnOk.style.background = "#77dd77";
-                console.log(`${compCheck} pode se inscrever`)
+               
             }else {
                 btnOk.style.background = "#FF6961";
                 btnOk.setAttribute("id", "dis");
@@ -102,15 +102,18 @@ export default function initComp() {
                         },
                     }).showToast();
                     inscCompetitions.push(btn.getAttribute("data-btn"));
-                    return inscCompetitions;
+                        
+                    userObjComp.comp = inscCompetitions;
+                    localStorage.setItem("UserData", JSON.stringify(userObjComp));
                     
-                    
+                    console.log(userObjComp);
+                    return userObjComp;
                     
                 }
 
             });
         }) 
-        return inscCompetitions
+        
     }
         
 }

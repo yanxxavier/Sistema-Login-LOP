@@ -69,7 +69,7 @@ export default function initLogin() {
                 },
                 
             }).showToast();
-            return false
+            return 
         }else {
             Toastify({ //Lib de alert 
                 text: `Seja bem vindo, ${userObj.name}!`,
@@ -87,6 +87,7 @@ export default function initLogin() {
             document.getElementById("usuario").value = "";
             document.getElementById("senha").value = "";
             userName.textContent = userObj.name;
+            document.dispatchEvent(logEvent);
         }
         
 
@@ -97,16 +98,7 @@ export default function initLogin() {
     document.querySelector('#login-form').addEventListener('submit', (event) => {
         event.preventDefault();
         fazerLogin()
-        if(fazerLogin() === false) {
-            return
-        }else {
-            document.dispatchEvent(logEvent);
-
-        }
-    
-        
-        
-            
+          
     })
 
     
