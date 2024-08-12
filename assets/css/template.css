@@ -6,6 +6,7 @@
 @import url(instru&cred.css);
 @import url(comp.css);
 @import url(beachModal.css);
+@import url(perfil.css);
 
 * {
     font-family: "Poppins", sans-serif;
@@ -48,8 +49,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
-
+    height: 85vh;
 }
 
 
