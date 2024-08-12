@@ -6,7 +6,6 @@ export default function initComp() {
         verifyCategory(userObjComp);
         let insc = checkInsc(userObjComp,competitions);
         let compArray = competitionBtnCheck(insc);
-        console.log(compArray)
 
         
         
@@ -105,8 +104,6 @@ export default function initComp() {
                         
                     userObjComp.comp = inscCompetitions;
                     localStorage.setItem("UserData", JSON.stringify(userObjComp));
-                    
-                    console.log(userObjComp);
                     return userObjComp;
                     
                 }
