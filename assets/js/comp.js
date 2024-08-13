@@ -6,7 +6,7 @@ export default function initComp() {
         verifyCategory(userObjComp);
         let insc = checkInsc(userObjComp,competitions);
         let compArray = competitionBtnCheck(insc);
-
+        console.log(userObjComp)
         
         
     })
@@ -101,7 +101,10 @@ export default function initComp() {
                         },
                     }).showToast();
                     inscCompetitions.push(btn.getAttribute("data-btn"));
-                        
+                    
+                    
+
+
                     userObjComp.comp = inscCompetitions;
                     localStorage.setItem("UserData", JSON.stringify(userObjComp));
                     return userObjComp;
@@ -112,5 +115,17 @@ export default function initComp() {
         }) 
         
     }
+    // function compPerfil(userObjPerfil) {
+    //     const competicoesPerfil = document.querySelector(".competicoes_perfil");
+    //     const comp = document.createElement("div");
+    //     comp.classList.add("competicao");
+    //     const conteudoCompeticao = 
+    //     `
+    //     <h5>ISA World Junior Surfing</h5>
+    //     <name style="display: none;" id="compIsaPic">Oceanside Pier, Califórnia - 🇺🇸</name>
+    //     <i class="fa-solid fa-location-dot localBtn"></i>
+    //     <span>29/08/2024</span>
+    //     `
+    // }
         
 }

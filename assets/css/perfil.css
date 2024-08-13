@@ -4,6 +4,7 @@
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -39,4 +40,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+.age-sex {
+    display: flex;
+
 }

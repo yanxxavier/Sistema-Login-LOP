@@ -9,6 +9,10 @@ export default function initToggleScreen() {
     const perfilNav = document.querySelector(".perfil");
 
 
+    perfilNav.addEventListener("click", ()  => {
+        toggle('content6');
+    })
+
     instBtn.addEventListener("click", ()  => {
         toggle('content2');
     })
@@ -16,7 +20,8 @@ export default function initToggleScreen() {
         toggle('content3');
     })
     compBtn.addEventListener("click", ()  => {
-        toggle('content5');
+        toggle('content5')
+
     })
     loginNavBtn.addEventListener("click", ()  => {
         toggle('content');

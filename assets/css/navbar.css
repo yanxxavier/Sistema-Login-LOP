@@ -33,6 +33,15 @@
     border: none;
     
 }
+.perfil_image-navbar {
+    width: 30px;
+    height: 30px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    overflow: hidden;
+    
+}
 
 
 .nav .inst:hover,
@@ -66,6 +75,7 @@
     background-color: #FFF;
     padding: 1rem;
     border-radius: 10px;
+    cursor: pointer;
 }
 .perfil .fa-face-grin-beam {
     color: #000;
