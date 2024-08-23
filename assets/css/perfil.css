@@ -43,5 +43,17 @@
 }
 .age-sex {
     display: flex;
+    justify-content: space-between;
 
+}
+.dados_perfil {
+    color: #f0f0f0;
+    text-align: center;
+}
+.dados_perfil h4 {
+    font-size: 1.7rem;
+}
+.contador {
+    font-size: 1.3rem;
+    font-weight: bold;
 }
