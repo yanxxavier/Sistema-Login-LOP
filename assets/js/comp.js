@@ -2,8 +2,12 @@ export default function initComp() {
     const compUserData = localStorage.getItem("userData");
     const userObjComp = JSON.parse(compUserData);
 
-    document.addEventListener("logSucess", () => {
+    document.addEventListener('regSucess', () => {
         verifyCategory(userObjComp);
+
+    })
+
+    document.addEventListener("logSucess", () => {
         let insc = checkInsc(userObjComp,competitions);
         let compArray = competitionBtnCheck(insc);
         console.log(userObjComp)

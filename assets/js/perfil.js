@@ -70,6 +70,20 @@ export default function initPerfil() {
         pictureImageNav.appendChild(imgNav);
 
     }
+    document.addEventListener('logSucess', breedPerfil)
+    function breedPerfil() {
+        //breed dados no ato do login
+        // insc no ato da inscricao
+        const perfilName = document.querySelector('.perfil_name');
+        perfilName.textContent = perfilUserObj.name;
 
+        const perfilSex = document.querySelector('.sex');
+        perfilSex.textContent = perfilUserObj.gen;
+
+        const perfilCategory = document.querySelector('.category');
+        perfilCategory.textContent = perfilUserObj.category;
+        console.log('oi')
+
+    }
     
 }
