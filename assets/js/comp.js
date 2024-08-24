@@ -3,14 +3,14 @@ export default function initComp() {
     const userObjComp = JSON.parse(compUserData);
 
     document.addEventListener('regSucess', () => {
-        verifyCategory(userObjComp);
-
+        
     })
-
+    
     document.addEventListener("logSucess", () => {
         let insc = checkInsc(userObjComp,competitions);
         let compArray = competitionBtnCheck(insc);
         console.log(userObjComp)
+        verifyCategory(userObjComp);
         
         
     })

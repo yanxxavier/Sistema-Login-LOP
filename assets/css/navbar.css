@@ -80,3 +80,10 @@
 .perfil .fa-face-grin-beam {
     color: #000;
 }
+
+@media (max-width: 850px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+    }
+}

@@ -1,4 +1,5 @@
 export default function initPerfil() {
+    document.addEventListener('logSucess', () => {})
     const perfilUserData = localStorage.getItem("userData");
     const perfilUserObj = perfilUserData ? JSON.parse(perfilUserData) : {};
     const inputFile = document.querySelector("#picture_input");
@@ -70,7 +71,9 @@ export default function initPerfil() {
         pictureImageNav.appendChild(imgNav);
 
     }
-    document.addEventListener('logSucess', breedPerfil)
+    const perfilBtn = document.querySelector('.perfil');
+    perfilBtn.addEventListener('click', breedPerfil);
+
     function breedPerfil() {
         //breed dados no ato do login
         // insc no ato da inscricao
