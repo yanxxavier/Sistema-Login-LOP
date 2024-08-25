@@ -7,7 +7,8 @@ export default function initToggleScreen() {
     const signScreenBtn = document.getElementById("sign-screen");
     const loginScreenBtn = document.getElementById("login-btn");
     const perfilNav = document.querySelector(".perfil");
-
+    const navMobileBtn = document.getElementById('navBtn');
+    const navLinks = document.querySelector('.nav')
 
     perfilNav.addEventListener("click", ()  => {
         toggle('content6');
@@ -44,6 +45,10 @@ export default function initToggleScreen() {
         loginNavBtn.style.display = "none";
         perfilNav.style.display = "flex";
 
+    })
+
+    navMobileBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('navOpened');
     })
 
 

@@ -1,6 +1,5 @@
 main .box {
-    width: 450px;
-    height: 450px;
+    padding: 1rem 2.5rem;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     display: none;
@@ -20,7 +19,7 @@ main .box {
 }
 .login-area h3 {
     color: #FFF;
-    font-size: 38px;
+    font-size: 32px;
     text-align: center;
     
 }
@@ -144,7 +143,6 @@ main .box {
 .first-sign {
     color: #FFF;
     font-size: 16px;
-    margin-top: 10px;
     
 }
 .first-sign button {
@@ -157,22 +155,38 @@ main .box {
 }
 
 main .box4 {
-    width: 450px;
-    height: 500px;
+   
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 25px;
+    padding: 1rem 2.5rem;
 }
 .box4 h3 {
     font-size: 32px;
     color: #FFF;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 #register-result {
     margin: 20px 0;
     color: #ff0000;
+}
+
+@media (max-width: 850px) {
+    main .box,
+    main .box4 {
+        padding: 1rem 2rem;
+       
+    }
+
+    .user-bar,
+    .pass-bar,
+    .create-user,
+    .create-pass,
+    .confirm {
+        width: 240px;
+       
+    }
 }
