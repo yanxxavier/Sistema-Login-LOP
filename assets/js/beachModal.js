@@ -1,4 +1,5 @@
 export default function initShowModalBeach() {
+    console.log('bechmodal')
     const beachModal = document.querySelector(".modal_beach-section");
     const modalSection = document.querySelector(".modal_beach-section")
     const beachPicture = document.querySelector(".beachPicture");

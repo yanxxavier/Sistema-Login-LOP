@@ -91,8 +91,7 @@
         flex-direction: column;
         display: none;
         position: absolute;
-        right: 2vh;
-        top: 14.5vh;
+        top: 8vh;
         gap: 10px;    
         column-gap: 0;
         background-color: rgba(0, 0, 0, 0.6);

@@ -1,7 +1,7 @@
 /*Sistema Registro*/
 
 export default function initLogin() {
-    
+    console.log('login')
     function createUser() {
         let name = document.getElementById('client-name');
         let age = document.getElementById("client-age");

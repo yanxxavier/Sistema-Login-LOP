@@ -1,16 +1,14 @@
 export default function initComp() {
+    console.log('competi')
+    
     const compUserData = localStorage.getItem("userData");
     const userObjComp = JSON.parse(compUserData);
-
-    document.addEventListener('regSucess', () => {
-        
-    })
     
     document.addEventListener("logSucess", () => {
+        verifyCategory(userObjComp);
         let insc = checkInsc(userObjComp,competitions);
         let compArray = competitionBtnCheck(insc);
-        console.log(userObjComp)
-        verifyCategory(userObjComp);
+       
         
         
     })
@@ -58,7 +56,7 @@ export default function initComp() {
                 result[comp] = false;
             }
         }
-
+        
         return result;
     }
     function competitionBtnCheck(insc) {

@@ -1,4 +1,5 @@
 export default function initToggleScreen() {
+    console.log('toggle')
     let elementoAtual = null;
     const instBtn = document.getElementById("inst-btn");
     const credBtn = document.getElementById("cred-btn");

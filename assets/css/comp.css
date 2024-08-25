@@ -5,8 +5,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
-    width: 50vw;
+    padding: 1rem 2.5rem;
+    
 
 }
 .box5 h4 {
@@ -64,4 +64,33 @@
 }
 .fa-location-dot {
     color: #000;
+}
+@media (max-width: 550px) {
+    .box5 {
+        
+        padding: 1rem 2rem;
+        
+    
+    }
+    .competicao h5 {
+        font-size: .825rem;
+    }
+    .competicao p,
+    .competicao span {
+        font-size: .625rem !important;
+    }
+    
+    .inscreverBtn {
+        background: #FFF;
+        border: none;
+        padding: .4rem;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: .625rem !important;
+    
+    }
+    .fa-location-dot {
+        display: none;
+    }
 }

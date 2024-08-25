@@ -1,5 +1,5 @@
 export default function initPerfil() {
-    document.addEventListener('logSucess', () => {})
+    console.log('perfil')
     const perfilUserData = localStorage.getItem("userData");
     const perfilUserObj = perfilUserData ? JSON.parse(perfilUserData) : {};
     const inputFile = document.querySelector("#picture_input");
@@ -7,7 +7,7 @@ export default function initPerfil() {
     const pictureText = "Choose";
     const pictureImageNav = document.querySelector(".perfil_image-navbar")
     pictureImage.innerHTML = pictureText;
-
+    
     loadProfilePicture()
 
     inputFile.addEventListener("change", (e) => {
@@ -85,7 +85,7 @@ export default function initPerfil() {
 
         const perfilCategory = document.querySelector('.category');
         perfilCategory.textContent = perfilUserObj.category;
-        console.log('oi')
+        console.log(perfilUserObj)
 
     }
     
