@@ -1,6 +1,7 @@
 /*Sistema Registro*/
-
+import { setUserData, getUserData, setUserCategory } from './localStorage.js';
 export default function initLogin() {
+    const user = getUserData();
     console.log('login')
     function createUser() {
         let name = document.getElementById('client-name');
@@ -8,14 +9,14 @@ export default function initLogin() {
         let newUser = document.getElementById('crt-user');
         let newPass = document.getElementById('crt-pass');
         let gender = document.querySelector("input[name='generos']:checked");
-        const userData = {
+        let userData = {
             name: name.value,
             age: age.value,
             gen: gender.value, 
             user: newUser.value,
             password: newPass.value,
         }
-        localStorage.setItem('userData', JSON.stringify(userData));
+        setUserData(userData)
         
         
         name.value = "";
@@ -53,8 +54,7 @@ export default function initLogin() {
         const loginUser = document.getElementById("usuario").value;
         const loginPass = document.getElementById("senha").value;
         const userName = document.getElementById("user-name");
-        const storedData = localStorage.getItem("userData");
-        const userObj = JSON.parse(storedData);
+        const userObj = getUserData();
 
         if(loginUser !== userObj.user || loginPass !== userObj.password) {
             Toastify({ //Lib de alert 

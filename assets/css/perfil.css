@@ -1,6 +1,6 @@
 .box6 {
-    width: 45vw;
-    height: 450px;
+    padding: 1rem 2.5rem;
+    min-height: 450px;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     display: none;
@@ -56,4 +56,12 @@
 .contador {
     font-size: 1.3rem;
     font-weight: bold;
+}
+.competicoes_perfil {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+}
+.contador-comp {
+    margin-bottom: 1rem;
 }

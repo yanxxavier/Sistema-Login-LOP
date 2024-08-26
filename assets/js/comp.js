@@ -1,13 +1,16 @@
+import { setUserData, getUserData } from './localStorage.js';
+
 export default function initComp() {
     console.log('competi')
+    const user = getUserData();
     
-    const compUserData = localStorage.getItem("userData");
-    const userObjComp = JSON.parse(compUserData);
     
     document.addEventListener("logSucess", () => {
-        verifyCategory(userObjComp);
-        let insc = checkInsc(userObjComp,competitions);
+        verifyCategory(user);
+        let insc = checkInsc(user,competitions);
         let compArray = competitionBtnCheck(insc);
+        
+       
        
         
         
@@ -15,25 +18,25 @@ export default function initComp() {
 
     function verifyCategory(user) {
         if (user.age <= 12) {
-            user.category = "Sub-12";
+            user.cat = "Sub-12";
         } else if (user.age <= 14) {
-            user.category = "Sub-14";
+            user.cat = "Sub-14";
         } else if (user.age <= 16) {
-            user.category = "Sub-16";
+            user.cat = "Sub-16";
         } else if (user.age <= 18) {
-            user.category = "Sub-18";
+            user.cat = "Sub-18";
         } else if (user.age <= 35) {
-            user.category = "Open";
+            user.cat = "Open";
         } else if (user.age <= 40) {
-            user.category = "Masters";
+            user.cat = "Masters";
         } else if (user.age <= 45) {
-            user.category = "Grand Masters";
+            user.cat = "Grand Masters";
         } else if (user.age <= 50) { 
-            user.category = "Kahunas";
+            user.cat = "Kahunas";
         } else if (user.age <= 55) {
-            user.category = "Grand Kahunas";
+            user.cat = "Grand Kahunas";
         } else {
-            user.category = "Legends"; 
+            user.cat = "Legends"; 
         }
         
     }
@@ -50,7 +53,7 @@ export default function initComp() {
     function checkInsc (user, competition) {
         let result = {};
         for(let comp in competition) {
-            if(competition[comp].includes(user.category)) {
+            if(competition[comp].includes(user.cat)) {
                 result[comp] = true;
             }else {
                 result[comp] = false;
@@ -72,13 +75,15 @@ export default function initComp() {
                 btnOk.setAttribute("id", "dis");
 
             }
+            
+            
         }
         const inscBtns = document.querySelectorAll("[data-btn]");
         inscBtns.forEach(btn => {
             btn.addEventListener("click", () => {
                 if(btn.getAttribute("id") === "dis") {
                     Toastify({ //Lib de alert 
-                        text: `Impossivel fazer inscricao!`,
+                        text: `Impossivel fazer inscricao ou já inscrito!`,
                         duration: 3000,
                         close: true,
                         gravity: "bottom", 
@@ -103,13 +108,14 @@ export default function initComp() {
                         },
                     }).showToast();
                     inscCompetitions.push(btn.getAttribute("data-btn"));
-                    
+                    btn.setAttribute("id", "dis");
                     
 
 
-                    userObjComp.comp = inscCompetitions;
-                    localStorage.setItem("UserData", JSON.stringify(userObjComp));
-                    return userObjComp;
+                    user.comp = inscCompetitions;
+                    setUserData(user)
+               
+                    return user;
                     
                 }
 
@@ -117,17 +123,6 @@ export default function initComp() {
         }) 
         
     }
-    // function compPerfil(userObjPerfil) {
-    //     const competicoesPerfil = document.querySelector(".competicoes_perfil");
-    //     const comp = document.createElement("div");
-    //     comp.classList.add("competicao");
-    //     const conteudoCompeticao = 
-    //     `
-    //     <h5>ISA World Junior Surfing</h5>
-    //     <name style="display: none;" id="compIsaPic">Oceanside Pier, Califórnia - 🇺🇸</name>
-    //     <i class="fa-solid fa-location-dot localBtn"></i>
-    //     <span>29/08/2024</span>
-    //     `
-    // }
+    
         
 }

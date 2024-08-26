@@ -1,7 +1,8 @@
+import { setUserData, getUserData } from './localStorage.js';
 export default function initPerfil() {
     console.log('perfil')
-    const perfilUserData = localStorage.getItem("userData");
-    const perfilUserObj = perfilUserData ? JSON.parse(perfilUserData) : {};
+    const user = getUserData();
+  
     const inputFile = document.querySelector("#picture_input");
     const pictureImage = document.querySelector(".picture_image");
     const pictureText = "Choose";
@@ -24,14 +25,14 @@ export default function initPerfil() {
                 pictureImage.innerHTML = "";
                 pictureImage.appendChild(img);
 
-                perfilUserObj.imgSrc = readerTarget.result;
-                takePicture(perfilUserObj);
+                user.imgSrc = readerTarget.result;
+                takePicture(user);
                 
-                localStorage.setItem("userData", JSON.stringify(perfilUserObj));
+                setUserData(user);
                
             })
             reader.readAsDataURL(file);
-            console.log(perfilUserObj)
+            console.log(user)
 
         }else {
             pictureImage.innerHTML = pictureText;
@@ -40,17 +41,17 @@ export default function initPerfil() {
     })
     function loadProfilePicture() {
         
-        if(perfilUserObj.imgSrc) {
+        if(user.imgSrc) {
             //perfil principal
             const img = document.createElement("img");
-            img.src = perfilUserObj.imgSrc;
+            img.src = user.imgSrc;
             img.classList.add("perfil_picture");
             pictureImage.innerHTML = "";
             pictureImage.appendChild(img);
 
             //perfil Nav
             const imgNav = document.createElement("img");
-            imgNav.src = perfilUserObj.imgSrc;
+            imgNav.src = user.imgSrc;
             imgNav.classList.add("perfil_picture");
             pictureImageNav.innerHTML = ""; 
             pictureImageNav.appendChild(imgNav);
@@ -63,30 +64,46 @@ export default function initPerfil() {
 
     // Jogar imagem no perfil
 
-    function takePicture(userObj) {
+    function takePicture(user) {
         const imgNav = document.createElement("img");
-        imgNav.src = userObj.imgSrc;
+        imgNav.src = user.imgSrc;
         imgNav.classList.add("perfil_picture");
         pictureImageNav.innerHTML = ""; 
         pictureImageNav.appendChild(imgNav);
 
     }
     const perfilBtn = document.querySelector('.perfil');
-    perfilBtn.addEventListener('click', breedPerfil);
+    perfilBtn.addEventListener('click', () => {
+        breedPerfil()
+        createCompPerfil();
+    });
 
     function breedPerfil() {
         //breed dados no ato do login
         // insc no ato da inscricao
         const perfilName = document.querySelector('.perfil_name');
-        perfilName.textContent = perfilUserObj.name;
+        perfilName.textContent = user.name;
 
-        const perfilSex = document.querySelector('.sex');
-        perfilSex.textContent = perfilUserObj.gen;
+        //const perfilSex = document.querySelector('.sex');
+        //perfilSex.textContent = user.gen;
 
-        const perfilCategory = document.querySelector('.category');
-        perfilCategory.textContent = perfilUserObj.category;
-        console.log(perfilUserObj)
+        //const perfilCategory = document.querySelector('.category');
+        //perfilCategory.textContent = user.category;
+        //console.log(user.comp)
+
+        const contadorComp = document.querySelector('.contador');
+        contadorComp.textContent = (user.comp.length)
 
     }
     
+    function createCompPerfil() {
+        const compPerfilContainer = document.querySelector('.competicoes_perfil');
+        let competicoes = user.comp;
+        competicoes.forEach(comp => {
+            const btnComp = document.querySelector(`[data-btn = "${comp}"]`);
+            const compStructure = btnComp.parentNode;
+            compPerfilContainer.appendChild(compStructure);
+        })
+       
+    }
 }
