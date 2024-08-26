@@ -1,5 +1,5 @@
 /*Sistema Registro*/
-import { setUserData, getUserData, setUserCategory } from './localStorage.js';
+import { setUserData, getUserData } from './localStorage.js';
 export default function initLogin() {
     const user = getUserData();
     console.log('login')
