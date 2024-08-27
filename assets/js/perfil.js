@@ -55,6 +55,8 @@ export default function initPerfil() {
             imgNav.classList.add("perfil_picture");
             pictureImageNav.innerHTML = ""; 
             pictureImageNav.appendChild(imgNav);
+
+            setUserData(user);
         }else {
             pictureImage.innerHTML = pictureText;
     
@@ -74,6 +76,7 @@ export default function initPerfil() {
     }
     const perfilBtn = document.querySelector('.perfil');
     perfilBtn.addEventListener('click', () => {
+        console.log(user)
         breedPerfil()
         createCompPerfil();
     });
@@ -101,6 +104,7 @@ export default function initPerfil() {
         let competicoes = user.comp;
         competicoes.forEach(comp => {
             const btnComp = document.querySelector(`[data-btn = "${comp}"]`);
+            btnComp.style.display = 'none'
             const compStructure = btnComp.parentNode;
             compPerfilContainer.appendChild(compStructure);
         })

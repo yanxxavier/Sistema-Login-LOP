@@ -1,20 +1,15 @@
-import { setUserData, getUserData } from './localStorage.js';
+import { setUserData, getUserData, clearCategory } from './localStorage.js';
 
 export default function initComp() {
     console.log('competi')
     const user = getUserData();
     
-    
     document.addEventListener("logSucess", () => {
-        verifyCategory(user);
-        let insc = checkInsc(user,competitions);
-        let compArray = competitionBtnCheck(insc);
-        
-       
-       
-        
-        
-    })
+        clearCategory();
+        verifyCategory(user);  // Atualiza a categoria do usuário
+        let insc = checkInsc(user, competitions);
+        competitionBtnCheck(insc);  // Atualiza os botões de competição
+    });
 
     function verifyCategory(user) {
         if (user.age <= 12) {
@@ -38,7 +33,7 @@ export default function initComp() {
         } else {
             user.cat = "Legends"; 
         }
-        
+        setUserData(user);
     }
 
     let competitions = {
@@ -64,64 +59,53 @@ export default function initComp() {
     }
     function competitionBtnCheck(insc) {
         let inscCompetitions = [];
-        
-        for(let compCheck in insc) {
+        for (let compCheck in insc) {
             let btnOk = document.querySelector(`[data-btn = "${compCheck}"]`);
-            if(insc.hasOwnProperty(compCheck) && insc[compCheck] === true) {
+            if (insc.hasOwnProperty(compCheck) && insc[compCheck] === true) {
                 btnOk.style.background = "#77dd77";
-               
-            }else {
+            } else {
                 btnOk.style.background = "#FF6961";
                 btnOk.setAttribute("id", "dis");
-
             }
-            
-            
         }
         const inscBtns = document.querySelectorAll("[data-btn]");
         inscBtns.forEach(btn => {
             btn.addEventListener("click", () => {
-                if(btn.getAttribute("id") === "dis") {
-                    Toastify({ //Lib de alert 
-                        text: `Impossivel fazer inscricao ou já inscrito!`,
+                if (btn.getAttribute("id") === "dis") {
+                    Toastify({ // Lib de alert
+                        text: `Impossível fazer inscrição ou já inscrito!`,
                         duration: 3000,
                         close: true,
-                        gravity: "bottom", 
+                        gravity: "bottom",
                         position: "right",
-                        stopOnFocus: true, 
+                        stopOnFocus: true,
                         style: {
-                          background: "red",
+                            background: "red",
                         },
-                        
                     }).showToast();
-                }else {
-                    Toastify({ //Lib de alert 
+                } else {
+                    Toastify({ // Lib de alert
                         text: `Inscrito com sucesso!`,
                         duration: 3000,
                         close: true,
-                        gravity: "bottom", 
+                        gravity: "bottom",
                         position: "right",
-                        stopOnFocus: true, 
+                        stopOnFocus: true,
                         style: {
-                          background: "green",
-                          color: "white",
+                            background: "green",
+                            color: "white",
                         },
                     }).showToast();
                     inscCompetitions.push(btn.getAttribute("data-btn"));
                     btn.setAttribute("id", "dis");
-                    
-
-
+    
                     user.comp = inscCompetitions;
-                    setUserData(user)
-               
-                    return user;
-                    
+                    setUserData(user);  // Atualiza as competições no localStorage
+    
+                   
                 }
-
             });
-        }) 
-        
+        });
     }
     
         

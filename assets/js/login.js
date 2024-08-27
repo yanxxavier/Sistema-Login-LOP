@@ -1,9 +1,11 @@
 /*Sistema Registro*/
-import { setUserData, getUserData } from './localStorage.js';
+import { setUserData, getUserData, clearCategory } from './localStorage.js';
 export default function initLogin() {
-    const user = getUserData();
     console.log('login')
     function createUser() {
+        localStorage.clear();
+        console.log('localStorage após limpeza:', localStorage);
+        
         let name = document.getElementById('client-name');
         let age = document.getElementById("client-age");
         let newUser = document.getElementById('crt-user');
@@ -15,6 +17,7 @@ export default function initLogin() {
             gen: gender.value, 
             user: newUser.value,
             password: newPass.value,
+            comp: [],
         }
         setUserData(userData)
         
@@ -23,6 +26,8 @@ export default function initLogin() {
         age.value = "";
         newUser.value = "";
         newPass.value = "";
+
+        console.log('localStorage após criar:', localStorage);
     }
 
     
@@ -49,6 +54,7 @@ export default function initLogin() {
       
             
     })
+    const logEvent = new CustomEvent("logSucess");
 
     function fazerLogin() {
         const loginUser = document.getElementById("usuario").value;
@@ -93,7 +99,7 @@ export default function initLogin() {
 
     }
 
-    const logEvent = new CustomEvent("logSucess");
+   
 
     document.querySelector('#login-form').addEventListener('submit', (event) => {
         event.preventDefault();
